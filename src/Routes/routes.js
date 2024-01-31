@@ -26,7 +26,7 @@ allRoutes.get("/todos", async (req, res) => {
 
 //Update
 allRoutes.put("/todos", async (req, res) => {
-  const { name, id, stauts } = req.body;
+  const { name, id, status } = req.body;
 
   if (!id) {
     return res.status(400).json("Id is mandatory");
@@ -43,6 +43,7 @@ allRoutes.put("/todos", async (req, res) => {
     },
     data: {
       name,
+      status,
     },
   });
 
