@@ -9,7 +9,6 @@ const allRoutes = express.Router();
 // Create
 allRoutes.post("/todos", async (req, res) => {
   const { name } = req.body;
-  console.log(req.body)
   if (!name) {
     return res.status(400).json("task name is empty");
   }
@@ -37,8 +36,6 @@ allRoutes.get("/todos", async (req, res) => {
 //Update
 allRoutes.put("/todos", async (req, res) => {
   const { name, id, status } = req.body;
-  console.log('test ', req.body)
-
 
   if (!id) {
     return res.status(400).json("Id is mandatory");
